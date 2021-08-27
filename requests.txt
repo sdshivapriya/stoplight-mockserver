@@ -1,0 +1,60 @@
+docker run -i -t stoplight 
+
+POST PET
+curl -X 'POST' \
+  'http://172.17.0.2:4010/pet' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "labradors"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "cheerful"
+    }
+  ],
+  "status": "available"
+}'
+
+
+PUT PET
+curl -X 'PUT' \
+  'http://172.17.0.2:4010/pet' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "status": "available"
+}'
+
+
+GET PET BY STATUS
+curl -X GET  http://172.17.0.2:4010/pet/findByStatus?status=sold
+
+GET PET BY ID
+curl -X GET  http://172.17.0.2:4010/pet/10
+
+DELETE PET ID 
+curl -X 'DELETE' \
+  'http:///172.17.0.2:4010/pet/10' \
+  -H 'accept: application/json'
+  
+  
+  
+  
+  docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' faac5ef7da43

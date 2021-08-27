@@ -1,0 +1,24 @@
+How to mock API that has authentication in a way no authentication is needed
+    -   Send a dummy authentication header in the request 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker system prune -a
+docker rm -f $(docker ps -a -q)
+docker volume rm $(docker volume ls -q)
+docker rmi $(docker images -a -q)
+
+
+
+sudo apt update
